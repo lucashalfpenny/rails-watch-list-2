@@ -1,0 +1,8 @@
+<h1>New List:</h1>
+
+<div class= "new-list-card">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, label: false, placeholder: 'Name', error: 'This name has already been taken'%>
+    <%= f.button :submit, class: 'submit-btn' %>
+  <% end %>
+</div>

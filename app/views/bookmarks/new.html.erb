@@ -1,0 +1,16 @@
+<h1>Add New Movie</h1>
+
+<div class="new-movie-form-container">
+  <div class="new-movie-form">
+     <%= simple_form_for [ @list, @bookmark] do |f| %>
+      <%= f.association :movie %>
+       <%= f.button :submit %>
+     <% end %>
+  </div>
+</div>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>

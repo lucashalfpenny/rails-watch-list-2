@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="banner">
+    <%= image_tag ("bw-curtain-1.jpg") %>
+  </div>
+
+
+  <div class="new-movie-form-container mt-4">
+    <div>
+      <h3>Add New Movie</h3>
+      <div class="new-movie-form">
+        <%= simple_form_for [ @list, @bookmark] do |f| %>
+          <%= f.association :movie, label_html: { class: "input" } %>
+          <%= f.submit "Add Movie", class: "btn btn-primary ms-5 mt-3"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <%= render "shared/movie", list: @list %>
+
+  <div class="reviews-container mb-5" data-controller="insert-in-list">
+    <div class="reviews-list" data-insert-in-list-target="items">
+      <h3 class="mb-4">Reviews</h3>
+      <% @list.reviews.each do |review| %>
+        <%= render "review", review: review %>
+      <% end %>
+    </div>
+    <div class="review-form" data-insert-in-list-target="form">
+      <h3>Add A Review</h3>
+      <%= simple_form_for [ @list, @review ] do |f| %>
+        <%= f.input :content, label: false, placehoder: "Comment" %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

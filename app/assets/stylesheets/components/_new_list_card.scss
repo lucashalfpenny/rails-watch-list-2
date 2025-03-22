@@ -1,0 +1,30 @@
+.new-list-card {
+  border-radius: 0.3rem;
+  padding: 3rem;
+  margin-inline: auto;
+  margin-block: 0;
+  inline-size: 20rem;
+  background-color: rgb(141, 124, 179);
+  box-shadow: 0 0 5px black;
+}
+
+#new_list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  margin-block: 1rem;
+}
+
+.submit-btn {
+  border-radius: 0.3rem;
+  border: 1px solid black;
+}
+
+.error {
+  display: flex;
+  margin-block: 1rem;
+}
